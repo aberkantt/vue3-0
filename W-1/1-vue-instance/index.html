@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@next"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app"><!--String interpolution u açıyoz-->
+        
+        <h1>{{title}}</h1><!--bu kısmın vue.js den gelemsini istiyoruz-->
+        <p>{{content}}</p>
+        <a 
+        :target="github.target"
+        :href="github.url" 
+        v-bind:alt="github.alt"
+        >{{github.title}}</a>
+        
+        <br><br><!--string interpollution text contentinin olduğu yerde çalışır-->
+        <!--Burada yapmamız gereken vue da attribute değerini değiştirmek--><!--: yaparak da v-bind yerine kullanabiliriz-->
+        <button v-on:click="changeTitle('Bu 1. buton')">Title değiş...</button><!--butona bir tanımlama için v-on: ya da büyük ihitmalle @click kullanacağız-->
+        <button v-on:click="changeTitle('Bu 2. buton')">Title 2 değiş...</button>
+
+        <div @mousemove="updateCoords('MouseMooooove',$event)" class="box"  @click="changeTitle('Box üzerinden gelen')"></div>
+        <span>{{coords.x}},{{coords.y}}</span>
+
+    </div>
+    <script src="app.js"></script>
+</body> 
+</html>

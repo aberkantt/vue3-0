@@ -1,0 +1,28 @@
+*{
+    margin:0px; 
+    padding: 0px;
+    font-family: 'Courier New', Courier, monospace;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+.box{
+    width: 200px;
+    height: 200px;
+    background-color: #dedede;
+}
+.border{
+border: 4px dashed blue;
+}
+.red{
+    background-color: red;
+}
+.green{
+    background-color: green;
+} 
+.blue{
+    background-color: blue;
+}

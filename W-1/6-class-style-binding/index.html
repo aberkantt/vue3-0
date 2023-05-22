@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <title>Class Style Binding </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <input type="text" v-model="bgColor">
+        <button @click="showBorder=!showBorder">Border ekle/sil</button>
+        <button @click="redBG=!redBG">redBg ekle/sil</button>
+        <div class="box" :style="{backgroundColor:bgColor}" :class="boxClasses ">
+        </div> 
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
