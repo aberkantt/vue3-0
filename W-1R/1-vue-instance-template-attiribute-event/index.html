@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <title>her şey</title>
+
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            border: 2px dashed #c5161c;
+            background-color: black;
+            color: wheat;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h1>Bu html üzerinden yazılan statik başlık.</h1>
+        <h2> {{ title }} </h2>
+        <h1> {{hobbies[0]}} </h1>
+        <h2> {{personal.name}} {{personal.lname}} </h2>
+        <h1 v-html="details"></h1><!--burada kullanılan yapı güvenlik açığı oluşturur çünkü direkt kullanır. -->  <!-- string olarak derlediği için nereden ne istediğimizi bilmek gerek v-html ise bize database den ya da başka bir yeyrden gelen bir veri olduğunu söyler
+        ve derlemesi için gerekn bri komut işte daha doğrusu DİRECTİVE: kimyasnını davranışını etkileyen manipüle eden şey-->
+
+        <a :href="url" >TIKLA </a><!--v-bind:href te diyebilirsin :href te diyebilirsin FARK ETMEZ-->
+<br><br><br>
+        <button @click="setTitle('BU BENİM YENİ GÖNDERDİĞİM PARAMETREM')">TIKLA VE BAŞLIĞI DEĞİŞTİR.</button>
+        <h1>{{ title }}</h1>   <!--neye @click eklersem o tıklanabilir olur her şey gibi...-->
+
+
+        <div class="box" @mousemove="updateCoords">
+            {{coordsX}},{{coordsY}}
+        </div>
+
+        <input type="text" :value="fullName" @input="updateValue"/>
+        {{fullName}}
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
